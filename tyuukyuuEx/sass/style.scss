@@ -302,7 +302,7 @@ ul > li{
 
 .main{
     box-sizing: border-box;
-    width: 100%;
+    width: calc(100% - 280px);
     margin-left: 280px;
 
     @include mq($md){
@@ -312,7 +312,6 @@ ul > li{
 
 .fv{
     margin-bottom: 76px;
-    height: 873px;
     position: relative;
 
     @include mq($md){
@@ -505,27 +504,22 @@ ul > li{
 .fv__slider{
     margin-bottom: 71px;
     position: relative;
+    padding: 63px 0 63px 48px;
+    background-color: #F8F8F8;
 }
 
 .fv__slider-box{
-    width: 100%;
-    height: 486px;
-    padding: 63px 0 63px 0px;
-    background-color: #F8F8F8;
 
     & .fv__slider-item{
         margin-left: 48px;
     }
 
-    & .slick-track{
-        display: flex !important;
-        justify-content: flex-end;
+    img{
+        display: block;
     }
 
-    img{
-        width: 360px;
-        height: 360px;
-        display: block;
+    & .slick-list{
+        padding-right: 30%;
     }
 }
 

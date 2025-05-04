@@ -19,13 +19,13 @@ $(function(){
 
     $('.fv__slider-box').slick({
         autoplay: true,       // 自動再生
-        autoplaySpeed: 3000,  // 3秒ごとに切り替え
+        autoplaySpeed: 0,  // 3秒ごとに切り替え
         dots: false,           // ドットナビゲーションを表示
         arrows: false,         // 前後の矢印を表示
         infinite: true,       // 無限ループ
-        speed: 500,           // アニメーション速度
-        slidesToShow: 2.7,      // 一度に表示するスライド数
+        speed: 8000,           // アニメーション速度
+        slidesToShow: 2,      // 一度に表示するスライド数
         slidesToScroll: 1,     // 一度にスクロールするスライド数
-        rtl: true,
+        cssEase: 'linear',
     });
 });
