@@ -4,11 +4,11 @@ $(function(){
     $('.header-nav_section').hover(
         function() {
             $(this).children('.header-nav_section-itemlist').stop().slideDown(500);
-            $(this).find('.plus-height').stop().fadeOut(300);; 
+            $(this).find('.plus-height').stop().fadeOut(300); 
         },
         function() {
             $(this).children('.header-nav_section-itemlist').stop().slideUp(500);
-            $(this).find('.plus-height').stop().fadeIn(300);; 
+            $(this).find('.plus-height').stop().fadeIn(300); 
         }
     );
 
@@ -27,5 +27,26 @@ $(function(){
         slidesToShow: 2,      // 一度に表示するスライド数
         slidesToScroll: 1,     // 一度にスクロールするスライド数
         cssEase: 'linear',
+
+        responsive: [
+            {
+              breakpoint: 700, // 1024px以下の時
+              settings: {
+                slidesToShow: 1
+              }
+            },
+          ]
     });
+
+    $('.more-btn').hover(
+        function() {
+            $(this).stop().toggleClass("is-active");
+            $('.more-btn-dot').stop().toggleClass("is-active");
+        },
+        function() {
+            $(this).stop().toggleClass("is-active");
+            $('.more-btn-dot').stop().toggleClass("is-active");
+        }
+    );
+
 });
