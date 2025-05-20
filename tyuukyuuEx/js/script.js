@@ -1,6 +1,53 @@
 'use strict';
 
-const dotList = document.querySelectorAll(".dot")
+// セッションストレージからフラグを取得
+const isFirstLoad = sessionStorage.getItem('isFirstLoad');
+
+// ページの読み込みが完了したときに実行される関数
+window.addEventListener('load', function() {
+  // フラグが 'true' でない場合（初回アクセス時またはフラグが削除された場合）
+  if (isFirstLoad !== 'true') {
+    // ローディング画面を表示
+    const loadingElement = document.querySelector('.loading');
+    loadingElement.classList.add('is-active');
+
+    // 2秒後にローディング画面を非表示にする
+    setTimeout(function() {
+      // ローディング画面を非表示にする
+      loadingElement.classList.remove('is-active');
+      // コンテンツ要素を表示
+      const bodyInner = document.querySelector('.body__inner.hidden');
+      bodyInner.classList.remove('hidden'); // hiddenクラスを取り除くことでコンテンツを表示
+      // セッションストレージにフラグを保存
+      sessionStorage.setItem('isFirstLoad', 'true');
+    }, 2500);
+    setTimeout(function() {
+      loadingElement.style.display = 'none'; // 非表示にする
+    }, 3000);
+  } else {
+    // 2回目以降のアクセス時の処理を記述
+    // コンテンツ要素を表示
+    const contentsElement = document.querySelector('.body__inner.hidden');
+    contentsElement.classList.remove('hidden'); // hiddenクラスを取り除くことでコンテンツを表示
+  }
+});
+
+const dotList = document.querySelectorAll(".dot");
+dotList.forEach((dot) => {
+    dot.classList.toggle("is-active");
+});
+
+if (window.innerWidth > 1024) {
+    ScrollReveal().reveal('.fv__bg', { delay: 400 });
+    ScrollReveal().reveal('.fv__main', { delay: 500 });
+    ScrollReveal().reveal('.fv__text', { delay: 1200 });
+  } else {
+    // スマホなど小さい画面ではアニメーションを無効化
+    ScrollReveal().reveal('.fv__bg', { duration: 0 });
+    ScrollReveal().reveal('.fv__main', { duration: 0 });
+    ScrollReveal().reveal('.fv__text', { duration: 0 });
+}
+
 
 $(function(){
     $('.header-nav_section').find('ul').hide();
