@@ -7,29 +7,36 @@ const isFirstLoad = sessionStorage.getItem('isFirstLoad');
 window.addEventListener('load', function() {
   // フラグが 'true' でない場合（初回アクセス時またはフラグが削除された場合）
   if (isFirstLoad !== 'true') {
-    // ローディング画面を表示
-    const loadingElement = document.querySelector('.loading');
-    loadingElement.classList.add('is-active');
+    if(document.querySelectorAll('.loading').length){
+            // ローディング画面を表示
+            const loadingElement = document.querySelector('.loading');
+            loadingElement.classList.add('is-active');
 
-    // 2秒後にローディング画面を非表示にする
-    setTimeout(function() {
-      // ローディング画面を非表示にする
-      loadingElement.classList.remove('is-active');
-      // コンテンツ要素を表示
-      const bodyInner = document.querySelector('.body__inner.hidden');
-      bodyInner.classList.remove('hidden'); // hiddenクラスを取り除くことでコンテンツを表示
-      // セッションストレージにフラグを保存
-      sessionStorage.setItem('isFirstLoad', 'true');
-    }, 2500);
-    setTimeout(function() {
-      loadingElement.style.display = 'none'; // 非表示にする
-    }, 3000);
-  } else {
-    // 2回目以降のアクセス時の処理を記述
-    // コンテンツ要素を表示
-    const contentsElement = document.querySelector('.body__inner.hidden');
-    contentsElement.classList.remove('hidden'); // hiddenクラスを取り除くことでコンテンツを表示
-  }
+            // 2秒後にローディング画面を非表示にする
+            setTimeout(function() {
+            // ローディング画面を非表示にする
+            loadingElement.classList.remove('is-active');
+            // コンテンツ要素を表示
+            if(document.querySelectorAll('.body__inner.hidden').length){
+                const bodyInner = document.querySelector('.body__inner.hidden');
+                bodyInner.classList.remove('hidden'); // hiddenクラスを取り除くことでコンテンツを表示
+            }
+
+            // セッションストレージにフラグを保存
+            sessionStorage.setItem('isFirstLoad', 'true');
+            }, 2500);
+            setTimeout(function() {
+            loadingElement.style.display = 'none'; // 非表示にする
+            }, 3000);
+        } else {
+            // 2回目以降のアクセス時の処理を記述
+            // コンテンツ要素を表示
+            if(document.querySelectorAll('.body__inner.hidden').length){
+                const contentsElement = document.querySelector('.body__inner.hidden');
+                contentsElement.classList.remove('hidden'); // hiddenクラスを取り除くことでコンテンツを表示        
+            }
+        }
+    }
 });
 
 const dotList = document.querySelectorAll(".dot");
@@ -37,16 +44,19 @@ dotList.forEach((dot) => {
     dot.classList.toggle("is-active");
 });
 
-if (window.innerWidth > 1024) {
-    ScrollReveal().reveal('.fv__bg', { delay: 400 });
-    ScrollReveal().reveal('.fv__main', { delay: 500 });
-    ScrollReveal().reveal('.fv__text', { delay: 1200 });
-  } else {
-    // スマホなど小さい画面ではアニメーションを無効化
-    ScrollReveal().reveal('.fv__bg', { duration: 0 });
-    ScrollReveal().reveal('.fv__main', { duration: 0 });
-    ScrollReveal().reveal('.fv__text', { duration: 0 });
+if(typeof ScrollReveal !== 'undefined'){
+    if (window.innerWidth > 1024) {
+        ScrollReveal().reveal('.fv__bg', { delay: 400 });
+        ScrollReveal().reveal('.fv__main', { delay: 500 });
+        ScrollReveal().reveal('.fv__text', { delay: 1200 });
+    } else {
+        // スマホなど小さい画面ではアニメーションを無効化
+        ScrollReveal().reveal('.fv__bg', { duration: 0 });
+        ScrollReveal().reveal('.fv__main', { duration: 0 });
+        ScrollReveal().reveal('.fv__text', { duration: 0 });
+    }    
 }
+
 
 
 $(function(){
@@ -68,26 +78,29 @@ $(function(){
         $('.sp-global-menu').toggleClass("is-active");
     });
 
-    $('.fv__slider-box').slick({
-        autoplay: true,       // 自動再生
-        autoplaySpeed: 0,  // 3秒ごとに切り替え
-        dots: false,           // ドットナビゲーションを表示
-        arrows: false,         // 前後の矢印を表示
-        infinite: true,       // 無限ループ
-        speed: 8000,           // アニメーション速度
-        slidesToShow: 2,      // 一度に表示するスライド数
-        slidesToScroll: 1,     // 一度にスクロールするスライド数
-        cssEase: 'linear',
+    if(document.querySelectorAll('.fv__slider-box').length){
+        $('.fv__slider-box').slick({
+            autoplay: true,       // 自動再生
+            autoplaySpeed: 0,  // 3秒ごとに切り替え
+            dots: false,           // ドットナビゲーションを表示
+            arrows: false,         // 前後の矢印を表示
+            infinite: true,       // 無限ループ
+            speed: 8000,           // アニメーション速度
+            slidesToShow: 2,      // 一度に表示するスライド数
+            slidesToScroll: 1,     // 一度にスクロールするスライド数
+            cssEase: 'linear',
 
-        responsive: [
-            {
-              breakpoint: 700, // 1024px以下の時
-              settings: {
-                slidesToShow: 1
-              }
-            },
-          ]
-    });
+            responsive: [
+                {
+                breakpoint: 700, // 1024px以下の時
+                settings: {
+                    slidesToShow: 1
+                }
+                },
+            ]
+        });
+    }
+
 
     $('.btn').hover(
         function() {

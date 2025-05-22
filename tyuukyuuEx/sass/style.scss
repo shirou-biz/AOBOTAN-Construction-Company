@@ -1377,6 +1377,7 @@ ul > li{
 
     @include mq($lg){
         padding-right: 0px;
+        padding-left: 20px;
     }
 }
 
@@ -1386,10 +1387,11 @@ ul > li{
     border-radius: 50px;
     margin-top: 40px;
     margin-bottom: 64px;
+    object-fit: cover;
 
     @include mq($lg){
-        height: 589px;
-        border-radius: 10px 0 0 10px;
+        height: 500px;
+        border-radius: 20px 0 0 20px;
     }
 }
 
@@ -1404,5 +1406,119 @@ ul > li{
 
     @include mq($lg){
         display: none;
+    }
+}
+
+.about-page__nav{
+    margin-bottom: 80px;
+    position: relative;
+
+    @include mq($lg){
+        padding: 0 20px;
+        margin-bottom: 50px;
+    }
+
+    & .page_title{
+        font-weight: 700;
+        font-size: 40px;
+        margin-bottom: 64px;
+        line-height: 1;
+        @include mq($lg){
+            font-size: 28px;
+            margin-bottom: 40px;
+        }    
+    }
+
+    & .about-page__nav-desc{
+        line-height: 2;
+        margin-bottom: 64px;
+        @include mq($lg){
+            margin-bottom: 40px;
+        }
+        & .br-none{
+            @media (max-width: 440px) and (min-width: 375px){
+                display: none;
+            }
+        }
+    }
+
+    & .nav-btns{
+        display: flex;
+        gap: 24px;
+        @media (max-width: 600px) and (min-width: 375px){
+            flex-flow: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        & .nav-btn{
+            width: 208px;
+            border: 1px solid #4282B8;
+            padding: 11px 20px;
+            &.is-active{
+                background-color: #4282B8;
+            }
+
+            & .nav-btn-font{
+                margin-bottom: -10px;
+                font-weight: 400;
+                color: #000000;
+                &.is-active{
+                    color: #FFFFFF;
+                }
+            }
+
+            & .nav-btn-arrow::after{
+                content: '⌄';
+                color: #4282B8;
+                font-size: 25px;
+            }
+
+            & .nav-btn-arrow.is-active::after{
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    & .about-page__nav-img{
+        position: absolute;
+        top: 0;
+        left: 538px;
+        @include mq($lg){
+            top: rclamp(-37, -25, 375, 1023);
+            left: rclamp(283, 700, 375, 1023);
+            width: rclamp(83, 165, 375, 1023);
+        }
+    }
+}
+
+.about-page__philosophy{
+    margin-bottom: 50px;
+
+    @include mq($lg){
+        padding: 0 20px;
+        margin-bottom: 40px;
+    }
+
+    & .about-page__philosophy-img-rapper{
+        overflow-x: auto;
+
+        & .about-page__philosophy-img{
+            @include mq($lg){
+                width: 100%;
+                min-width: 650px;
+            }
+        }  
+    }
+}
+
+.subsection_title{
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 64px;
+    line-height: 1;
+    @include mq($lg){
+        font-size: 24px;
+        margin-bottom: 50px;
     }
 }
