@@ -1341,6 +1341,8 @@ ul > li {
       -ms-flex-align: center;
           align-items: center;
   font-size: 16px;
+  background-color: #FFFFFF;
+  border: 0;
 }
 @media (max-width: 1024px) {
   .contact .contact__body .form-btn {
@@ -1350,8 +1352,12 @@ ul > li {
 .contact .contact__body .form-btn .header-nav_section-img {
   margin-right: 8px;
 }
+.contact .contact__body .form-btn.is-active {
+  background-color: #000000;
+}
 .contact .contact__body .form-btn.is-active .header-nav_section-img {
-  opacity: 0;
+  -webkit-filter: invert(100%) contrast(150%) brightness(110%);
+          filter: invert(100%) contrast(150%) brightness(110%);
 }
 .contact .contact__img {
   position: absolute;
@@ -1601,7 +1607,7 @@ ul > li {
 @media (max-width: 1024px) {
   .about-page__nav {
     padding: 0 20px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 }
 .about-page__nav .page_title {
@@ -1691,7 +1697,6 @@ ul > li {
 @media (max-width: 1024px) {
   .about-page__philosophy {
     padding: 0 20px;
-    margin-bottom: 40px;
   }
 }
 .about-page__philosophy .about-page__philosophy-img-rapper {
@@ -1713,6 +1718,181 @@ ul > li {
 @media (max-width: 1024px) {
   .subsection_title {
     font-size: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.about-page__profile {
+  margin-bottom: 80px;
+  width: min(953px, 100%);
+}
+@media (max-width: 1024px) {
+  .about-page__profile {
+    padding: 0 20px;
+  }
+}
+.about-page__profile .about-page__profile-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 52px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .about-page__profile .about-page__profile-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
     margin-bottom: 50px;
+  }
+}
+.about-page__profile .about-page__profile-top .about-page__profile-top_message {
+  width: 465px;
+  margin-right: 40px;
+  line-height: 1.9;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+@media (max-width: 1024px) {
+  .about-page__profile .about-page__profile-top .about-page__profile-top_message {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+    line-height: 1.7;
+    margin-right: 0;
+  }
+}
+.about-page__profile .about-page__profile-top .about-page__profile-top_photo {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+@media (max-width: 1024px) {
+  .about-page__profile .about-page__profile-top .about-page__profile-top_photo {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+.about-page__profile .about-page__profile-top .about-page__profile-top_photo .about-page__profile-top_photo-img {
+  margin-bottom: 16px;
+  width: 331px;
+}
+@media (max-width: 1024px) {
+  .about-page__profile .about-page__profile-top .about-page__profile-top_photo .about-page__profile-top_photo-img {
+    width: clamp(15.625rem, 13.8165509259rem + 7.7160493827vw, 18.75rem);
+  }
+}
+.about-page__profile .about-page__profile-top .about-page__profile-top_photo .about-page__profile-top_photo-name .about-page__profile-top_photo-name-position {
+  margin-bottom: 24px;
+}
+.about-page__profile .about-page__profile-top .about-page__profile-top_photo .about-page__profile-top_photo-name .about-page__profile-top_photo-name-main {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4282B8;
+  line-height: 1;
+}
+@media (max-width: 1024px) {
+  .about-page__profile .about-page__profile-top .about-page__profile-top_photo .about-page__profile-top_photo-name .about-page__profile-top_photo-name-main {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+}
+.about-page__profile .about-page__profile-table {
+  border-collapse: collapse; /* ボーダーが重ならないように */
+  width: 100%;
+}
+.about-page__profile .about-page__profile-table th, .about-page__profile .about-page__profile-table td {
+  border-bottom: 1px solid #B1C6DC;
+  padding: 30px 0;
+}
+.about-page__profile .about-page__profile-table th {
+  width: 21%;
+  font-weight: 700;
+  text-align: left;
+}
+@media (max-width: 1024px) {
+  .about-page__profile .about-page__profile-table th {
+    width: auto;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+}
+
+.about-page__safetyefforts {
+  margin-bottom: 193px;
+  width: min(953px, 100%);
+}
+@media (max-width: 1024px) {
+  .about-page__safetyefforts {
+    padding: 0 20px;
+  }
+}
+.about-page__safetyefforts .about-page__safetyefforts-content {
+  padding-top: 15px;
+}
+.about-page__safetyefforts .about-page__safetyefforts-content:nth-of-type(1) {
+  margin-bottom: 30px;
+}
+.about-page__safetyefforts .about-page__safetyefforts-content .about-page__safetyefforts-content_title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+@media (max-width: 1024px) {
+  .about-page__safetyefforts .about-page__safetyefforts-content .about-page__safetyefforts-content_title {
+    font-size: 22px;
+    margin-bottom: 22px;
+  }
+}
+.about-page__safetyefforts .about-page__safetyefforts-content .about-page__safetyefforts-content_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .about-page__safetyefforts .about-page__safetyefforts-content .about-page__safetyefforts-content_body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+.about-page__safetyefforts .about-page__safetyefforts-content .about-page__safetyefforts-content_body .about-page__safetyefforts-content_body-desc {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 642px;
+  line-height: 1.8;
+  margin-right: 20px;
+}
+@media (max-width: 1024px) {
+  .about-page__safetyefforts .about-page__safetyefforts-content .about-page__safetyefforts-content_body .about-page__safetyefforts-content_body-desc {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+  }
+}
+.about-page__safetyefforts .about-page__safetyefforts-content .about-page__safetyefforts-content_body .about-page__safetyefforts-content_body-img {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+@media (max-width: 1024px) {
+  .about-page__safetyefforts .about-page__safetyefforts-content .about-page__safetyefforts-content_body .about-page__safetyefforts-content_body-img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: clamp(17.5rem, 13.1597222222rem + 18.5185185185vw, 25rem);
+    margin-bottom: 15px;
   }
 }

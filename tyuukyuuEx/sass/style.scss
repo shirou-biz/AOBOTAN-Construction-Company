@@ -1199,6 +1199,8 @@ ul > li{
             display: flex;
             align-items: center;
             font-size: 16px;
+            background-color: #FFFFFF;
+            border: 0;
 
             @include mq($lg){
                 margin-left: 0;
@@ -1209,8 +1211,9 @@ ul > li{
             }
 
             &.is-active{
+                background-color: #000000;
                 & .header-nav_section-img{
-                    opacity: 0;
+                    filter: invert(100%) contrast(150%) brightness(110%);
                 }
             }
         }
@@ -1415,7 +1418,7 @@ ul > li{
 
     @include mq($lg){
         padding: 0 20px;
-        margin-bottom: 50px;
+        margin-bottom: 70px;
     }
 
     & .page_title{
@@ -1494,10 +1497,8 @@ ul > li{
 
 .about-page__philosophy{
     margin-bottom: 50px;
-
     @include mq($lg){
         padding: 0 20px;
-        margin-bottom: 40px;
     }
 
     & .about-page__philosophy-img-rapper{
@@ -1519,6 +1520,147 @@ ul > li{
     line-height: 1;
     @include mq($lg){
         font-size: 24px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
+    }
+}
+
+.about-page__profile{
+    margin-bottom: 80px;
+    width: min(953px, 100%);
+    @include mq($lg){
+        padding: 0 20px;
+    }
+
+    & .about-page__profile-top{
+        display: flex;
+        margin-bottom: 52px;
+        justify-content: space-between;
+        @include mq($lg){
+            flex-flow: column;
+            margin-bottom: 50px;
+        }
+
+        & .about-page__profile-top_message{
+            width: 465px;
+            margin-right: 40px;
+            // width: min(48.8%, rclamp(400, 465, 1215, 1440));
+            // margin-right: rclamp(40, 157, 1215, 1440);
+            line-height: 1.9;
+            order: 1;
+            @include mq($lg){
+                order: 2;
+                width: 100%;
+                line-height: 1.7;
+                margin-right: 0;
+            }
+        }
+
+        & .about-page__profile-top_photo{
+            order: 2;
+            @include mq($lg){
+                order: 1;
+            }
+
+            & .about-page__profile-top_photo-img{
+                margin-bottom: 16px;
+                width: 331px;
+                // width: rclamp(300, 331, 1215, 1440);
+                @include mq($lg){
+                    width: rclamp(250, 300, 375, 1023);
+                }
+            }
+
+            & .about-page__profile-top_photo-name{
+                & .about-page__profile-top_photo-name-position{
+                    margin-bottom: 24px;                    
+                }
+                
+                & .about-page__profile-top_photo-name-main{
+                    font-size: 32px;
+                    font-weight: 700;
+                    color: #4282B8;
+                    line-height: 1;
+                    @include mq($lg){
+                        font-size: 24px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    & .about-page__profile-table{
+        border-collapse: collapse; /* ボーダーが重ならないように */
+        width: 100%;
+
+        & th, & td{
+            border-bottom: 1px solid #B1C6DC;
+            padding: 30px 0;
+        }
+
+        & th{
+            width: 21%;
+            font-weight: 700;
+            text-align: left;
+            @include mq($lg){
+                width: auto;
+                padding-right: 10px;
+                white-space: nowrap; 
+            }
+        }
+    }
+}
+
+.about-page__safetyefforts{
+    margin-bottom: 193px;
+    width: min(953px, 100%);
+    @include mq($lg){
+        padding: 0 20px;
+    }
+
+    & .about-page__safetyefforts-content{
+        padding-top: 15px;
+
+        &:nth-of-type(1){
+            margin-bottom: 30px;
+        }
+
+        & .about-page__safetyefforts-content_title{
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 30px;
+            @include mq($lg){
+                font-size: 22px;
+                margin-bottom: 22px;
+            }
+        }
+
+        & .about-page__safetyefforts-content_body{
+            display: flex;
+            justify-content: space-between;
+            @include mq($lg){
+                flex-flow: column;
+            }
+
+            & .about-page__safetyefforts-content_body-desc{
+                order: 1;
+                width: 642px;
+                line-height: 1.8;
+                margin-right: 20px;
+                @include mq($lg){
+                    order: 2;
+                    width: 100%;
+                }
+            }
+
+            & .about-page__safetyefforts-content_body-img{
+                order: 2;
+                @include mq($lg){
+                    order: 1;
+                    width: rclamp(280, 400, 375, 1023);
+                    margin-bottom: 15px;
+                }
+            }
+        }
     }
 }
