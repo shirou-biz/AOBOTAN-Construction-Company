@@ -56,6 +56,10 @@ ul > li {
   list-style: none;
 }
 
+section {
+  scroll-margin-top: 50px; /* 上に80pxの余白 */
+}
+
 /* ローディング　-------------*/
 .loading {
   position: fixed;
@@ -471,7 +475,7 @@ ul > li {
   font-size: 12px;
 }
 
-.sp-global-menu_download {
+.sp-global-menu_contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -479,11 +483,11 @@ ul > li {
       -ms-flex-align: center;
           align-items: center;
 }
-.sp-global-menu_download img {
+.sp-global-menu_contact img {
   width: 20px;
   margin-right: 8px;
 }
-.sp-global-menu_download h1 {
+.sp-global-menu_contact h1 {
   font-weight: 700;
   font-size: 16px;
 }
@@ -827,6 +831,7 @@ ul > li {
   font-size: 16px;
   position: relative;
   display: block;
+  color: #000000;
 }
 .btn .btn-dot::after {
   content: "●";
@@ -1356,8 +1361,8 @@ ul > li {
   background-color: #000000;
 }
 .contact .contact__body .form-btn.is-active .header-nav_section-img {
-  -webkit-filter: invert(100%) contrast(150%) brightness(110%);
-          filter: invert(100%) contrast(150%) brightness(110%);
+  -webkit-filter: invert(100%) contrast(150%) brightness(150%);
+          filter: invert(100%) contrast(150%) brightness(150%);
 }
 .contact .contact__img {
   position: absolute;

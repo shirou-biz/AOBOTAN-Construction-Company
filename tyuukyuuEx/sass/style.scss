@@ -74,6 +74,10 @@ ul > li{
     list-style: none;
 }
 
+section {
+    scroll-margin-top: 50px; /* 上に80pxの余白 */
+  }
+
 
 /* ローディング　-------------*/
 .loading{
@@ -412,7 +416,7 @@ ul > li{
     }
 }
 
-.sp-global-menu_download{
+.sp-global-menu_contact{
     display: flex;
     align-items: center;
 
@@ -739,6 +743,7 @@ ul > li{
     font-size: 16px;
     position: relative;
     display: block;
+    color: #000000;
 
     & .btn-dot::after{
         content: '●';
@@ -1213,7 +1218,7 @@ ul > li{
             &.is-active{
                 background-color: #000000;
                 & .header-nav_section-img{
-                    filter: invert(100%) contrast(150%) brightness(110%);
+                    filter: invert(100%) contrast(150%) brightness(150%);
                 }
             }
         }
