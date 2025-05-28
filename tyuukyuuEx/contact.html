@@ -128,30 +128,91 @@
             <div class="content-area">
                 <main class="main">
                     <section class="about-page__fv">
-                        <img class="about-page__fv-img" src="images/service-house.jpeg">
+                        <img class="about-page__fv-img" src="images/contact.jpeg">
                         <div class="about-page__fv-bg"></div>
                     </section>
                     <section class="about-page__nav">
-                        <p class="page_title">事業内容</p>
+                        <p class="page_title">お問い合わせ</p>
                         <p class="about-page__nav-desc">
-                            青牡丹工務店は、「住宅建築・リフォーム」「方針新築・リフォーム」「公共工事」の3つを事業の柱としています。ここではそれぞれご紹介します。
+                            青牡丹工務店のサービスにご興味を持って頂き、誠にありがとうございます。下記のフォームよりお問い合わせください。
                         </p>
-                        <div class="nav-btns case-service">
-                            <a href="service.html#resident" class="nav-btn btn">
-                                <p class="nav-btn-font">住宅建築・リフォーム</p>
-                                <span class="nav-btn-arrow"></span>
-                            </a>
-                            <a href="service.html#corporation" class="nav-btn btn">
-                                <p class="nav-btn-font">法人新築・リフォーム</p>
-                                <span class="nav-btn-arrow"></span>
-                            </a>
-                            <a href="service.html#publicworks" class="nav-btn btn">
-                                <p class="nav-btn-font">公共工事</p>
-                                <span class="nav-btn-arrow"></span>
-                            </a>
+                        <div class="contact-page__phase">
+                            <div class="contact-page__phase-wrapper">
+                                <div class="contact-page__phase-input">
+                                    <p class="contact-page__phase-input-number">01</p>
+                                    <p class="contact-page__phase-input-text">入力</p>
+                                </div>
+                                <div class="contact-page__phase-bar"></div>
+                                <div class="contact-page__phase-complete">
+                                    <p class="contact-page__phase-complete-number">02</p>
+                                    <p class="contact-page__phase-complete-text">送信完了</p>
+                                </div>
+                            </div>
+                            <div class="contact-page__telnumber">
+                                <p class="contact-page__telnumber-text">お電話も受け付けています。</p>
+                                <p class="contact-page__telnumber-main">0000-000-0000</p>
+                                <p class="contact-page__telnumber-sub">営業時間10:00-20:00</p>
+                            </div>
                         </div>
-                        <img class="about-page__nav-img case-service" src="images/paperless_01 1.png">
+                        <img class="about-page__nav-img case-service" src="images/contact_01 1.png">
                     </section>
+                    <section class="contact-page__form">
+                        <div class="form-wrapper">
+                            <form action="https://docs.google.com/forms/d/1kyg2LoRMMUyv3YWJq6dtGb6gNQe-0FG3CxlbJH8lyUs/formResponse" id="form">
+                                <div class="box">
+                                    <p class="box">お問い合わせの種類</p>
+                                    <div class="flex-box">  
+                                        <input type="radio" name="entry.229539841" required value="resident">
+                                        <p>注文住宅の相談</p>
+                                    </div>
+                                    <div class="flex-box">
+                                        <input type="radio" name="entry.229539841" required value="corporation">
+                                        <p>法人建築の相談</p>
+                                    </div>
+                                    <div class="flex-box">
+                                        <input type="radio" name="entry.229539841" required value="reform">
+                                        <p>リフォームの相談</p>
+                                    </div>
+                                    <div class="flex-box">
+                                        <input type="radio" name="entry.229539841" required value="publicworks">
+                                        <p>公共工事の相談</p>
+                                    </div>
+                                    <div class="flex-box">
+                                        <input type="radio" name="entry.229539841" required value="others">
+                                        <p>その他</p>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <label for="name">お名前</label>
+                                    <input type="text" id="last-name" name="entry.1949837522" placeholder="青牡丹" autocomplete="family-name" required>
+                                    <input type="text" id="first-name" name="entry.1471988635" placeholder="幸太郎" autocomplete="given-name" required>
+                                </div>
+                                <div class="box">
+                                    <label for="mail">メールアドレス</label>
+                                    <input type="mail" name="entry.284645763" id="mail" placeholder="aobotan@gmail.com" required>
+                                </div>
+                                <div class="box">
+                                    <label for="phone">電話番号</label>
+                                    <input type="tel" name="entry.1535550473" id="phone" placeholder="000-0000-0000">
+                                </div>
+                                <div class="box">
+                                    <label for="address">住所</label>
+                                    <input type="text" name="entry.1229380789" id="address" placeholder="大阪府大阪市中央区北区南町5-6-7" required>
+                                </div>
+                                <div class="box">
+                                    <input type="checkbox" name="entry.138460493" required>
+                                    <p>利用規約に同意する</p>
+                                </div>
+                                <input type="submit" class="submit-btn">
+                            </form>
+                            <p class="end-message">お問い合わせありがとうございました</p>
+                            <p class="false-message">送信失敗です</p>
+                        </div>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                    </section>
+
+
+
                     <section class="service-page__case" id="resident">
                         <img class="service-page__case-topimage" src="images/works01.jpeg" alt="住宅建築・リフォーム画像">
                         <div class="service-page__case-content">

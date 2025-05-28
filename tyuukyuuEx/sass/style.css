@@ -59,6 +59,11 @@ ul > li {
 section {
   scroll-margin-top: 50px; /* 上に80pxの余白 */
 }
+@media (max-width: 1024px) {
+  section {
+    scroll-margin-top: 70px;
+  }
+}
 
 /* ローディング　-------------*/
 .loading {
@@ -183,7 +188,8 @@ section {
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* ヘッダー　-------------*/
@@ -1100,6 +1106,7 @@ section {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.7;
+  text-align: left;
 }
 @media (max-width: 1024px) {
   .news__list .news__list-item .news__list-item-main {
@@ -1630,6 +1637,7 @@ section {
 .about-page__nav .about-page__nav-desc {
   line-height: 2;
   margin-bottom: 64px;
+  width: min(422px, 100%);
 }
 @media (max-width: 1024px) {
   .about-page__nav .about-page__nav-desc {
@@ -1683,6 +1691,18 @@ section {
 .about-page__nav .nav-btns .nav-btn .nav-btn-arrow.is-active::after {
   color: #FFFFFF;
 }
+@media (max-width: 700px) and (min-width: 375px) {
+  .about-page__nav .nav-btns.case-service {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 18px;
+  }
+}
 .about-page__nav .about-page__nav-img {
   position: absolute;
   top: 0;
@@ -1693,6 +1713,13 @@ section {
     top: clamp(-2.3125rem, -2.7465277778rem + 1.8518518519vw, -1.5625rem);
     left: clamp(17.6875rem, 2.6050347222rem + 64.3518518519vw, 43.75rem);
     width: clamp(5.1875rem, 2.2216435185rem + 12.6543209877vw, 10.3125rem);
+  }
+}
+@media (max-width: 1024px) {
+  .about-page__nav .about-page__nav-img.case-service {
+    top: clamp(-2.3125rem, -2.7465277778rem + 1.8518518519vw, -1.5625rem);
+    left: clamp(17.6875rem, 0.7965856481rem + 72.0679012346vw, 46.875rem);
+    width: clamp(4.5rem, 1.1362847222rem + 14.3518518519vw, 10.3125rem);
   }
 }
 
@@ -1900,4 +1927,238 @@ section {
     width: clamp(17.5rem, 13.1597222222rem + 18.5185185185vw, 25rem);
     margin-bottom: 15px;
   }
+}
+
+.service-page__case {
+  width: clamp(43.75rem, 3.75rem + 62.5vw, 60rem);
+  margin-bottom: 72px;
+}
+@media (max-width: 1024px) {
+  .service-page__case {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+.service-page__case .service-page__case-topimage {
+  height: 400px;
+  border-radius: 50px;
+  margin-bottom: 56px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .service-page__case .service-page__case-topimage {
+    height: 300px;
+    margin-bottom: 40px;
+  }
+}
+.service-page__case .service-page__case-content {
+  padding: 0 50px;
+}
+@media (max-width: 1024px) {
+  .service-page__case .service-page__case-content {
+    padding: 0 10px;
+  }
+}
+.service-page__case .service-page__case-content .service-page__case-content_text {
+  margin-bottom: 88px;
+}
+@media (max-width: 1024px) {
+  .service-page__case .service-page__case-content .service-page__case-content_text {
+    margin-bottom: 60px;
+  }
+}
+.service-page__case .service-page__case-content .service-page__case-content_text .service-page__case-content_text-title {
+  padding-bottom: 39px;
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 1px solid #B1C6DC;
+  line-height: 1;
+}
+.service-page__case .service-page__case-content .service-page__case-content_text .service-page__cas-contente_text-desc {
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 700px) and (min-width: 375px) {
+  .service-page__case .service-page__case-content .service-page__case-content_text .service-page__cas-contente_text-desc {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+.service-page__case .service-page__case-content .service-page__case-content_text .service-page__cas-contente_text-desc .service-page__case-content_text-desc-main {
+  width: 43.5%;
+  line-height: 1.8;
+  font-size: 20px;
+  font-weight: 700;
+}
+@media (max-width: 700px) and (min-width: 375px) {
+  .service-page__case .service-page__case-content .service-page__case-content_text .service-page__cas-contente_text-desc .service-page__case-content_text-desc-main {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.service-page__case .service-page__case-content .service-page__case-content_text .service-page__cas-contente_text-desc .service-page__case-content_text-desc-sub {
+  width: 51.9%;
+  line-height: 1.8;
+}
+@media (max-width: 700px) and (min-width: 375px) {
+  .service-page__case .service-page__case-content .service-page__case-content_text .service-page__cas-contente_text-desc .service-page__case-content_text-desc-sub {
+    width: 100%;
+  }
+}
+.service-page__case .service-page__case-content .service-page__case-content_ex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 700px) and (min-width: 375px) {
+  .service-page__case .service-page__case-content .service-page__case-content_ex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+.service-page__case .service-page__case-content .service-page__case-content_ex .service-page__case-content_ex-item:nth-child(1) {
+  margin-right: clamp(0.9375rem, -6.2932692308rem + 11.2980769231vw, 3.875rem);
+}
+@media (max-width: 700px) and (min-width: 375px) {
+  .service-page__case .service-page__case-content .service-page__case-content_ex .service-page__case-content_ex-item:nth-child(1) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+.service-page__case .service-page__case-content .service-page__case-content_ex .service-page__case-content_ex-item .service-page__case-content_ex-item-title {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.service-page__case .service-page__case-content .service-page__case-content_ex .service-page__case-content_ex-item .service-page__case-content_ex-item-img {
+  margin-bottom: 20px;
+}
+@media (max-width: 700px) and (min-width: 375px) {
+  .service-page__case .service-page__case-content .service-page__case-content_ex .service-page__case-content_ex-item .service-page__case-content_ex-item-img {
+    margin-bottom: 10px;
+  }
+}
+.service-page__case .service-page__case-content .service-page__case-content_ex .service-page__case-content_ex-item .service-page__case-content_ex-item-detail {
+  font-size: 14px;
+}
+
+.contact-page__phase {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .contact-page__phase {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+.contact-page__phase .contact-page__phase-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media (max-width: 1024px) {
+  .contact-page__phase .contact-page__phase-wrapper {
+    margin-bottom: 40px;
+  }
+}
+.contact-page__phase .contact-page__phase-wrapper .contact-page__phase-input {
+  width: 209px;
+  background-color: #4282B8;
+  padding: 7px 20px 13px 20px;
+  text-align: center;
+  color: #FFFFFF;
+  border: 3px solid #4282B8;
+}
+@media (max-width: 1024px) {
+  .contact-page__phase .contact-page__phase-wrapper .contact-page__phase-input {
+    width: clamp(11.25rem, 10.201099537rem + 4.475308642vw, 13.0625rem);
+  }
+}
+.contact-page__phase .contact-page__phase-wrapper .contact-page__phase-input .contact-page__phase-input-number {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.contact-page__phase .contact-page__phase-wrapper .contact-page__phase-input .contact-page__phase-input-text {
+  font-weight: 700;
+  line-height: 1;
+}
+.contact-page__phase .contact-page__phase-wrapper .contact-page__phase-bar {
+  height: 1px;
+  width: clamp(1.25rem, -4.1346153846rem + 8.4134615385vw, 3.4375rem);
+  background-color: #4282B8;
+  margin-top: 34px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media (max-width: 1024px) {
+  .contact-page__phase .contact-page__phase-wrapper .contact-page__phase-bar {
+    width: clamp(1.25rem, -0.0159143519rem + 5.4012345679vw, 3.4375rem);
+  }
+}
+.contact-page__phase .contact-page__phase-wrapper .contact-page__phase-complete {
+  width: 209px;
+  background-color: #FFFFFF;
+  padding: 7px 20px 13px 20px;
+  text-align: center;
+  color: #4282B8;
+  border: 3px solid #4282B8;
+}
+@media (max-width: 1024px) {
+  .contact-page__phase .contact-page__phase-wrapper .contact-page__phase-complete {
+    width: clamp(11.25rem, 10.201099537rem + 4.475308642vw, 13.0625rem);
+  }
+}
+.contact-page__phase .contact-page__phase-wrapper .contact-page__phase-complete .contact-page__phase-complete-number {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.contact-page__phase .contact-page__phase-wrapper .contact-page__phase-complete .contact-page__phase-complete-text {
+  font-weight: 700;
+  line-height: 1;
+}
+.contact-page__phase .contact-page__telnumber {
+  margin-left: clamp(1.875rem, -16.5865384615rem + 28.8461538462vw, 9.375rem);
+}
+@media (max-width: 1024px) {
+  .contact-page__phase .contact-page__telnumber {
+    margin-left: 0;
+  }
+}
+.contact-page__phase .contact-page__telnumber .contact-page__telnumber-text {
+  margin-bottom: 29px;
+  font-weight: 700;
+}
+@media (max-width: 1024px) {
+  .contact-page__phase .contact-page__telnumber .contact-page__telnumber-text {
+    margin-bottom: 14px;
+  }
+}
+.contact-page__phase .contact-page__telnumber .contact-page__telnumber-main {
+  font-family: "Kanit", sans-serif;
+  font-size: 32px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.contact-page__phase .contact-page__telnumber .contact-page__telnumber-sub {
+  font-size: 12px;
+  font-weight: 700;
 }
